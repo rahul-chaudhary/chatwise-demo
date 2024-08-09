@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Chatwise</string>
+    <string name="view_products">View Products</string>
+    <string name="products_list">Products List</string>
+</resources>

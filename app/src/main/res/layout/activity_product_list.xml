@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clrOffWhite"
+    tools:context=".ProductListActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGL"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGL"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".96"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/products_list"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        android:textFontWeight="@integer/material_motion_duration_long_2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/startGL"
+        app:layout_constraintEnd_toEndOf="@id/endGL"
+        app:layout_constraintBottom_toTopOf="@id/productsRV"
+        app:layout_constraintHeight_percent="0.1"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productsRV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/startGL"
+        app:layout_constraintEnd_toEndOf="@id/endGL"
+        app:layout_constraintTop_toBottomOf="@id/titleTV"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <ProgressBar
+        android:id="@+id/pBar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="@id/productsRV"
+        app:layout_constraintEnd_toEndOf="@id/productsRV"
+        app:layout_constraintTop_toTopOf="@id/productsRV"
+        app:layout_constraintBottom_toBottomOf="@id/productsRV"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

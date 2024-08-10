@@ -32,6 +32,10 @@ class ProductDetailsActivity : AppCompatActivity() {
 
         binding.productNameTV.text = product?.title
         binding.productDescriptionTV.text = product?.description
-
+        binding.productPriceTV.text = '₹' + product?.price.toString()
+        binding.productRatingTV.text = "Rating - " + product?.rating.toString() + "/5"
+        binding.productCategoryTV.text = "Product Category : " + product?.category
+        binding.productBrandTV.text = "Product Brand : " + product?.brand
+        binding.productWeightTV.text = "Product Weight : " + product?.weight + "g"
     }
 }

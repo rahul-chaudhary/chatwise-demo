@@ -4,71 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:layout_marginBottom="16dp">
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="end"
-        app:constraint_referenced_ids="productImage" />
+    android:paddingTop="2dp"
+    android:paddingBottom="6dp"
+    android:paddingHorizontal="16dp"
+    android:background="@color/clrOffWhite">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/productCard"
         android:layout_width="match_parent"
-        app:strokeWidth="0dp"
+        android:layout_height="wrap_content"
         android:elevation="10dp"
-        android:layout_height="0dp"
         android:padding="10dp"
+        app:cardElevation="10dp"
         app:cardBackgroundColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
 
-    <ImageView
-        android:id="@+id/productImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:padding="5dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@id/productCard"
-        app:layout_constraintDimensionRatio="1:1.5"
-        app:layout_constraintEnd_toStartOf="@id/productName"
-        app:layout_constraintStart_toStartOf="@id/productCard"
-        app:layout_constraintTop_toTopOf="@id/productCard"
-        tools:src="@drawable/ic_launcher_background" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            >
 
-    <TextView
-        android:id="@+id/productName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginVertical="8dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/productDescription"
-        app:layout_constraintEnd_toEndOf="@id/productCard"
-        app:layout_constraintStart_toEndOf="@id/barrier"
-        app:layout_constraintTop_toTopOf="@id/productCard"
-        app:layout_constraintVertical_bias="0"
-        tools:text="Product Name" />
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="productImage" />
 
-    <TextView
-        android:id="@+id/productDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="viewStart"
-        android:ellipsize="marquee"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@id/productCard"
-        app:layout_constraintEnd_toEndOf="@id/productCard"
-        app:layout_constraintStart_toEndOf="@id/barrier"
-        app:layout_constraintTop_toBottomOf="@id/productName"
-        app:layout_constraintHorizontal_bias="0"
-        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec odio." />
+
+            <ImageView
+                android:id="@+id/productImage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                app:layout_constraintWidth_percent="0.3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/barrier"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:src="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/productDescription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/barrier"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0"
+                tools:text="Product Name" />
+
+            <TextView
+                android:id="@+id/productDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                app:layout_constraintWidth_percent="0.65"
+                android:textStyle="italic"
+                android:textSize="12sp"
+                android:justificationMode="inter_word"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@id/productName"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec odio."
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

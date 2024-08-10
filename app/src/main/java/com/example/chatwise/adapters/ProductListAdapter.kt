@@ -53,7 +53,7 @@ class ProductListAdapter(private val context: Context) :
     override fun getItemCount() = productList.size
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-//        holder.binding.productImage = products[position].thumbnail
+
         Glide
             .with(context)
             .load(productList[position].thumbnail)

@@ -24,21 +24,34 @@
         android:layout_width="wrap_content"
         />
 
-    <TextView
-        android:id="@+id/titleTV"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/products_list"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        android:gravity="center_vertical"
-        android:textFontWeight="@integer/material_motion_duration_long_2"
+<!--    <TextView-->
+<!--        android:id="@+id/titleTV"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/products_list"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:textFontWeight="@integer/material_motion_duration_long_2"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="@id/startGL"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/endGL"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/productsRV"-->
+<!--        app:layout_constraintHeight_percent="0.1"-->
+<!--        />-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        app:title="Products List"
+        app:titleTextColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/black"
+        android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="@id/startGL"
-        app:layout_constraintEnd_toEndOf="@id/endGL"
-        app:layout_constraintBottom_toTopOf="@id/productsRV"
-        app:layout_constraintHeight_percent="0.1"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productsRV"
@@ -46,7 +59,7 @@
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="@id/startGL"
         app:layout_constraintEnd_toEndOf="@id/endGL"
-        app:layout_constraintTop_toBottomOf="@id/titleTV"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
         app:layout_constraintBottom_toBottomOf="parent"
         />
     <ProgressBar
